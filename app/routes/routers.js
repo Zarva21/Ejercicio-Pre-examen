@@ -1,30 +1,27 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../controllers/users.controller.js');
-const Proyecto = require('../controllers/projects.controller.js');
-const Tarea = require('../controllers/tasks.controller.js');
+const User = require('../controllers/usuarios.controller.js');
+const Libro = require('../controllers/libros.controller.js');
+const Autor = require('../controllers/autores.controller.js');
 
-
-
-// usuario routes
+// Rutas de Usuarios
 router.post('/api/usuarios/create', User.create);
 router.put('/api/usuarios/update/:id', User.updateById);
 router.delete('/api/usuarios/delete/:id', User.deleteById);
-router.get('/api/usuarios/all', User.retrieveAllUsers);
+router.get('/api/usuarios/all', User.retrieveAll);
 
-// Rutas de proyectos
-router.post('/api/proyectos/create', Proyecto.create);
-router.put('/api/proyectos/update/:id', Proyecto.updateById);
-router.delete('/api/proyectos/delete/:id', Proyecto.deleteById);
-router.get('/api/proyectos/all', Proyecto.retrieveAll);
+// Rutas de Libros
+router.post('/api/libros/create', Libro.create);
+router.put('/api/libros/update/:id', Libro.updateById);
+router.delete('/api/libros/delete/:id', Libro.deleteById);
+router.get('/api/libros/all', Libro.retrieveAll);
 
-// Rutas de tareas
-router.post('/api/tareas/create', Tarea.create);
-router.put('/api/tareas/update/:id', Tarea.updateById);
-router.delete('/api/tareas/delete/:id', Tarea.deleteById);
-router.get('/api/tareas/all', Tarea.retrieveAll);
-
+// Rutas de Autores
+router.post('/api/autores/create', Autor.create);
+router.put('/api/autores/update/:id', Autor.updateById);
+router.delete('/api/autores/delete/:id', Autor.deleteById);
+router.get('/api/autores/all', Autor.retrieveAll);
 
 
 module.exports = router;

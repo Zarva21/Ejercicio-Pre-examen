@@ -25,10 +25,9 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.Usuarios = require('../models/users.model.js')(sequelize, Sequelize);
-db.Proyectos = require('../models/projects.model.js')(sequelize, Sequelize);
-db.Tareas = require('../models/tasks.model.js')(sequelize, Sequelize);
-
+db.Usuarios = require('../models/usuarios.model.js')(sequelize, Sequelize);
+db.Libros = require('../models/libros.model.js')(sequelize, Sequelize);
+db.Autores = require('../models/autores.model.js')(sequelize, Sequelize);
 
 
 module.exports = db;
