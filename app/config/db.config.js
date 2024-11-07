@@ -1,4 +1,4 @@
-const env = require('./env.js');
+const env = require('./env.js'); // Ruta a `env.js`
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(env.database, env.username, env.password, {
@@ -10,23 +10,14 @@ const sequelize = new Sequelize(env.database, env.username, env.password, {
             rejectUnauthorized: false
         }
     },
-    
-
-    pool: {
-        max: env.pool.max,
-        min: env.pool.min,
-        acquire: env.pool.acquire,
-        idle: env.pool.idle,
-    }
+    pool: env.pool
 });
 
 const db = {};
-
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.Juegos = require('../models/juegoalq.model.js')(sequelize, Sequelize);
-
-
+// Importa el modelo `juegoalq.model.js`
+db.Juego = require('../models/juegoalq.model.js')(sequelize, Sequelize);
 
 module.exports = db;
