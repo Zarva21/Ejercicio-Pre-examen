@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../controllers/usuarios.controller.js');
+const User = require('../controllers/juegoalq.controller.js');
 const Libro = require('../controllers/libros.controller.js');
 const Autor = require('../controllers/autores.controller.js');
 

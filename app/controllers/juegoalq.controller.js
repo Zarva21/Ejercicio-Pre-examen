@@ -1,5 +1,5 @@
 const db = require('../config/db.config.js');
-const Usuario = db.Usuarios;
+const Ju = db.Juegos;
 
 exports.create = (req, res) => {
     Usuario.create(req.body)
